@@ -831,11 +831,10 @@
      * =========================================================================
      */
     const REPO_VIDEOS_POR_NOMBRE = {
-      // Ejemplos listos para descomentar o ampliar con tus propios archivos MP4:
-      // 'sofia': 'videos/sofia.mp4',
-      // 'mateo': 'videos/mateo.mp4',
-      // 'lucia': 'videos/lucia.mp4',
-      fallbackVideo: 'videos/papa-noel-general.mp4'
+      'karina': 'Karina.mp4',
+      'mateo': 'Mateo.mp4',
+      'santiago': 'Santiago.mp4',
+      fallbackVideo: 'Karina.mp4'
     };
 
     function normalizeChildNameForRepo(rawName) {
@@ -1165,6 +1164,7 @@
 
       unmuteBtn.classList.add('hidden');
       fallbackCard.classList.add('hidden');
+      videoEl.autoplay = true;
       videoEl.muted = false;
       videoEl.src = info.url;
       videoEl.load();
@@ -1199,6 +1199,7 @@
       };
 
       videoEl.onloadedmetadata = startAutoplay;
+      videoEl.oncanplay = startAutoplay;
       startAutoplay();
     }
 
